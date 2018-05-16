@@ -13,3 +13,7 @@ command to launch maven :
 
 command to run Libra on aws :
 	 nohup java -jar libra-monitor-0.0.1-SNAPSHOT.jar &
+	 
+--
+
+Connect to AWS via the terminal : ssh -i /Users/Filipe/.ssh/Libra.pem ec2-user@54.202.68.108
