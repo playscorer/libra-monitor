@@ -9,11 +9,21 @@
     </layout> 
   </appender> 
   
-  <appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
+<!--   <appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
     <param name="file" value="logdir/libra-monitor.log"/>
     <param name="DatePattern" value="'.'yyyy-MM-dd" />
     <layout class="org.apache.log4j.PatternLayout">
         <param name="ConversionPattern" value="%-5p %d{HH:mm:ss,SSS} %c{1} - %L - %m%n" />
+    </layout>
+  </appender> -->
+  
+  <appender name="file" class="org.apache.log4j.rolling.RollingFileAppender">
+    <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+        <param name="ActiveFileName" value="logdir/libra-monitor.log" />
+        <param name="FileNamePattern" value="logdir/libra-monitor.%d{yyyyMMdd}.log.gz" />
+    </rollingPolicy>
+    <layout class="org.apache.log4j.PatternLayout">
+        <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %m%n" />
     </layout>
   </appender>
 
